@@ -2,20 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemsController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+//Home
+Route::get('/',[ItemsController::class,'Home'])->name('all-category');
+Route::get('/category/{x}',[ItemsController::class,'Home'])->name('home-category');
 
 //ITEM-GROUP
 route::get('/item-group',[ItemsController::class,'getItemGroup'])->name('item-group');
@@ -31,7 +22,9 @@ route::get('/del-item/{x}',[ItemsController::class,'delItem'])->name('delete-ite
 route::get('/items/{x}',[ItemsController::class,'getItem'])->name('edit-item');
 route::post('/update-item',[ItemsController::class,'updateItem'])->name('update-item');
 
-
+//Cart 
+route::get('/add-to-cart/{x}',[ItemsController::class,'addToCart'])->name('add-to-cart');
+route::get('/checkout',[ItemsController::class,'checkout'])->name('checkout');
 
 Auth::routes();
 

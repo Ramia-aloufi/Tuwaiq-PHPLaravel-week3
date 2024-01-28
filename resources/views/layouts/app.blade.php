@@ -20,7 +20,8 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body dir="rtl">
-    <div id="app">
+    <div id="app min-vh-100 overflow-y-hidden">
+
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" style="font-family:Cairo" href="{{ url('/') }}">
@@ -31,15 +32,12 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav m-auto">
-                    <a href="{{route('item-group')}}" class="nav-link">الفئات</a>
-                    <a href="{{route('items')}}" class="nav-link">المنتجات</a>
-
-                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+            <a class="nav-link" href="{{route('checkout')}}"><i class="bi bi-cart3"></i><span class="badge bg-danger">{{Session::get('count')}}</span></a>
+          </li>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -77,10 +75,16 @@
 
             </div>
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+        @yield('content')
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#toggle-address-form').click(function() {
+            $('#address-form').toggle();
+        });
+    });
+</script>
 </body>
+
 </html>

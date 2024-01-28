@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
-@section('content')
+@section('dashboard_content')
 <div class="container ">
   <div class="row">
     <h1 class="text-center mb-4"> الفئات</h1>

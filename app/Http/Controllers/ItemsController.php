@@ -2,16 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+
 use Illuminate\Http\Request;
 use App\Models\ItemGroup;
 use App\Models\Items;
 class ItemsController extends Controller
 {
-
+     // Home
+    public function Home($id = null){
+        $data=ItemGroup::All();
+        $products  = ($id) ? Items::where('itemGroupNum',$id)->get() : Items::All();
+        return view('welcome',['data'=>$data, 'products'=>$products]);
+    }
+     // ItemsGroup
     public function getItemGroup($id = null){
         $data=ItemGroup::All();
         $existingValue = ($id) ? ItemGroup::findOrFail($id) : null;
-        // $issave=true;
         return view('itemgroup',['data'=>$data,'existingValue'=>$existingValue]);
 
     }
@@ -72,7 +80,6 @@ class ItemsController extends Controller
         return redirect('/items');
 
     }
-
     public function updateItem(Request $request){
         // dd($request);
         $item = Items::find($request->id);
@@ -84,6 +91,34 @@ class ItemsController extends Controller
 
         $item->save();
         return redirect('/items');
+
+    }
+
+    // Cart
+    public function addToCart($id){
+        // DB::table('cart')->insert(['item'=> $id]);
+        $existingCartItem = DB::table('cart')->where('item', $id)->first();
+
+    if ($existingCartItem) {
+        DB::table('cart')->where('item', $id)->increment('quantity');
+    } else {
+        DB::table('cart')->insert([
+            'item' => $id,
+            'quantity' => 1
+        ]);
+    }
+        $count = DB::table('cart')->sum('quantity');  
+        Session::put('count',$count);
+        return redirect('/');
+    }
+    public function checkout(){
+        $items = DB::table('cart')->join('items', 'cart.item', '=', 'items.id')->get();  
+        $total = 0;
+        foreach ($items as $cartItem) {
+            $total += $cartItem->quantity * $cartItem->price;
+        }
+
+        return view('checkout',['cartItems'=>$items,'total'=>$total]);
 
     }
 

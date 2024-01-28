@@ -1,12 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
-@section('content')
+@section('dashboard_content')
 <div class="container ">
     <div class="row">
       <h1 class="text-center mb-4"> المنتجات</h1>
     </div>
     <div class="row justify-content-center">
-      <div class="col-3 card">
+      <div class="col-md-3 card">
        <div class="card-header">
         <h3 class="card-title">
         @if(isset($existingValue))
@@ -64,7 +64,7 @@
        </form>
       </div>
    
-      <div class="col-6 card">
+      <div class="col-md-6 card">
         <div class="card-header">
             <h3 class="card-title">المنتجات</h3>
         </div>
