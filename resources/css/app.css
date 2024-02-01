@@ -1,0 +1,7 @@
+.custom-background {
+    background-image: url('https://img.tukuppt.com/bg_grid/00/13/28/B6wG7dCRqN.jpg!/fh/350');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(5px);
+}

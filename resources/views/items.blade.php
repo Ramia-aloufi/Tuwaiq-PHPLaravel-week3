@@ -25,22 +25,26 @@
         @csrf
         <div class="form-group">
          <label for="itemName">اسم المنتج</label>
-         <input type="text" class="form-control form-control-sm" name="itemName" value="{{ isset($existingValue) ? $existingValue->itemName : '' }}">
+         <input type="text" class="form-control form-control-sm" name="itemName" value="{{ isset($existingValue) ? $existingValue->itemName : '' }}" required>
         </div>
 
         <div class="form-group">
          <label for="price"> السعر</label>
-         <input type="text" class="form-control form-control-sm" name="price" value="{{ isset($existingValue) ? $existingValue->price : '' }}" >
+         <input type="text" class="form-control form-control-sm" name="price" value="{{ isset($existingValue) ? $existingValue->price : '' }}" required >
         </div>
 
         <div class="form-group">
          <label for="qty"> الكمية</label>
-         <input type="text" class="form-control form-control-sm" name="qty" value="{{ isset($existingValue) ? $existingValue->qty : '' }}" >
+         <input type="text" class="form-control form-control-sm" name="qty" value="{{ isset($existingValue) ? $existingValue->qty : '' }}"required >
         </div>
 
         <div class="form-group">
          <label for="color"> اللون</label>
-         <input type="text" class="form-control form-control-sm" name="color" value="{{ isset($existingValue) ? $existingValue->color : '' }}">
+         <input type="text" class="form-control form-control-sm" name="color" value="{{ isset($existingValue) ? $existingValue->color : '' }}" required>
+        </div>
+        <div class="form-group">
+         <label for="color"> صورة المنتج</label>
+         <input type="text" name="image" class="form-control form-control-sm" value="{{ isset($existingValue) ? $existingValue->image : '' }}" required>
         </div>
         <div class="form-group">
              <label for="itemGroupNum">الفئه</label>

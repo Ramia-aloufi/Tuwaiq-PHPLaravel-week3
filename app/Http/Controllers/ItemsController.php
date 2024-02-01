@@ -67,6 +67,7 @@ class ItemsController extends Controller
             'itemName' => $request->itemName,
             'itemGroupNum' => $request->itemGroupNum,
             'price' => $request->price,
+            'image' => $request->image,
             'qty' => $request->qty,
             'color' => $request->color
          ]);
@@ -86,6 +87,7 @@ class ItemsController extends Controller
         $item->itemName = $request->itemName;
         $item->itemGroupNum = $request->itemGroupNum;
         $item->price = $request->price;
+        $item->image = $request->image;
         $item->qty = $request->qty;
         $item->color = $request->color;
 

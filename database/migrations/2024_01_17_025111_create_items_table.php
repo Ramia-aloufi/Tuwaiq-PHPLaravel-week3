@@ -17,6 +17,7 @@ return new class extends Migration
             $table->double('price');
             $table->integer('qty');
             $table->integer('itemGroupNum');
+            $table->string('image');
             $table->string('color');
             $table->timestamps();
         });
