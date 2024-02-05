@@ -16,6 +16,7 @@
     },
     "dependencies": {
         "bootstrap-icons": "^1.11.3",
-        "vercel": "^33.4.1"
+        "vercel": "^32.3.0",
+        "vercel-php": "^0.6.0"
     }
 }
