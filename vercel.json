@@ -4,15 +4,5 @@
           "src": "/(.*)",
           "dest": "/public/index.php"
         }
-      ],
-      "builds": [
-        {
-          "src": "public/**/*",
-          "use": "@vercel/static-build"
-        },
-        {
-          "src": "artisan",
-          "use": "@vercel/php"
-        }
       ]
 }
