@@ -1,7 +1,18 @@
 {
     "routes": [
-    {
-        "src": "/(.*)",
-        "dest": "/api/index.php"
-    }
-]}
+        {
+          "src": "/(.*)",
+          "dest": "/index.php"
+        }
+      ],
+      "builds": [
+        {
+          "src": "public/**/*",
+          "use": "@vercel/static-build"
+        },
+        {
+          "src": "artisan",
+          "use": "@vercel/php"
+        }
+      ]
+}
