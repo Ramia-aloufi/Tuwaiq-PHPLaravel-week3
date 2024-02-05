@@ -19,11 +19,36 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Scripts -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <style>
+    .btn-custom:hover {
+        border:transparent;
+        background:#c6b777;
+         color: #fff;
+    }
+    .btn-custom{
+        border-radius: 10px;
+        text-decoration:none;
+        border: 1px solid #aaa; 
+        color: #777;
+    }
+    .btn-custom2:hover {
+        border:transparent;
+        background:#c6b777;
+         color: #fff;
+    }
+    .btn-custom2{
+        border-radius: 10px;
+        text-decoration:none;
+        background:rgba(238,238,238,0.5);
+        color: #777;
+
+    }
+
+  </style>
 </head>
-<body dir="rtl" class="bg-white" style="font-family:Cairo">
+<body dir="rtl" class="bg-white" style="font-family:Cairo;">
     <div id="app min-vh-100 overflow-y-hidden ">
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -80,6 +105,53 @@
             </div>
         </nav>
         @yield('content')
+        <footer class="text-center bg-body-tertiary">
+  <!-- Grid container -->
+  <div class="container pt-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-tiktok"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="#!"
+        role="button"
+        data-mdb-ripple-color="dark"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a class="text-body" href="#">Ramia Aloufi</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

@@ -2,11 +2,11 @@
 
 @section('dashboard_content')
 <div class="container ">
-  <div class="row">
+  <div class="row ">
     <h1 class="text-center mb-4"> الفئات</h1>
   </div>
-  <div class="row justify-content-center">
-  <div class="col-3 card">
+  <div class="row gap-4 justify-content-center">
+  <div class="col-md-3 card bg-white p-0">
     <div class="card-header">
         <h3 class="card-title">
             @if(isset($existingValue))
@@ -30,7 +30,8 @@
     <label for="itemGroupName">اسم الفئة</label>
     <input type="text" class="form-control form-control-sm" name="itemGroupName" value="{{ isset($existingValue) ? $existingValue->itemGroupName : '' }}">
 
-    <button class="btn btn-primary mt-2">
+    <button class=" py-2 px-4 btn mt-2 " style="background:#c6b777;
+         color: #fff;">
         @if(isset($existingValue))
             تحديث
         @else
@@ -41,7 +42,7 @@
 </div>
 
     @if(isset($data))
-    <div class=" col-6 card">
+    <div class=" col-md-6 card bg-white p-0">
      <div class="card-header">
       <h3 class="card-title">الفئات</h3>
      </div>
